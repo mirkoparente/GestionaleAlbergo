@@ -1,0 +1,60 @@
+﻿@model GestionaleAlbergo.Models.ServiziAggiuntivi
+
+<div>
+    <h4>ServiziAggiuntivi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDServizio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDServizio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoServizio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoServizio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantità)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantità)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezzo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDPrenotazioni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDPrenotazioni)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,91 @@
+﻿@model GestionaleAlbergo.Models.Prenotazioni
+
+@{
+    ViewBag.Title = "DettaglioPrenotazioni";
+}
+
+<h2>DettaglioPrenotazioni</h2>
+
+<div>
+    <h4>Prenotazioni</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDPrenotazioni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDPrenotazioni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataPrenotazione)
+        </dt>
+
+        <dd>
+            @Model.DataPrenotazione.ToShortDateString()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeriodoDal)
+        </dt>
+
+        <dd>
+            @Model.PeriodoDal.ToShortDateString()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeriodoAl)
+        </dt>
+
+        <dd>
+            @Model.PeriodoAl.ToShortDateString()
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Caparra)
+        </dt>
+
+        <dd>
+            @Model.Caparra.ToString("C2")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </dt>
+
+        <dd>
+            @Model.Prezzo.ToString("C2")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trattamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trattamento)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCamera)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCamera)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

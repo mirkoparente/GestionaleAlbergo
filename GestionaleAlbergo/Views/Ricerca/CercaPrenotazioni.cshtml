@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "CercaPrenotazioni";
+}
+
+<h2>Cerca Prenotazioni</h2>
+
+<div class="d-flex justify-content-between">
+
+@using (Html.BeginForm())
+{
+    
+    <div class="form-group">
+        @Html.Label("Codice Fiscale:")
+        @Html.TextBox("codiceFiscale", null, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Cerca</button>
+}
+
+<button id="pensione" class="btn btn-primary h-25">Pensione Completa</button>
+</div>
+
+
+<div id="result">
+    <ul id="list">
+    </ul>
+</div>
+
+@section scripts
+    {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#pensione").click(function () {
+                $("#result").slideToggle()
+                $("#list").empty()
+                $.ajax({
+                    method: "GET",
+                    url: "CercaPensione",
+                    success: function (sp) {
+                        console.log(sp)
+                            var li = `<li> Totale Prenotazioni in Pensione Completa: ${sp}</li>`
+                            $("#list").append(li)
+                        
+                    }
+                })
+            })
+
+            //$(".btn").click(function () {
+            //    $("#result").slideDown()
+            //    $.ajax({
+            //        method: "POST",
+            //        url: "CercaPrenotazioniCF",
+            //        success: function (sp) {
+            //            console.log(sp)
+            //            $.each(sp,function(i,v){
+
+            //            var li = `<li> Totale Prenotazioni in Pensione Completa: ${v.Nome}</li>`
+            //            $("#list").append(li)
+            //            })
+
+            //        }
+            //    })
+            //} )
+        })
+    </script>
+}

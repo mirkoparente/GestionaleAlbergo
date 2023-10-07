@@ -1,0 +1,63 @@
+﻿@model IEnumerable<GestionaleAlbergo.Models.ServiziAggiuntivi>
+
+@{
+    ViewBag.Title = "ListaServizi";
+}
+
+<h2>ListaServizi</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreaServizi")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDServizio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoServizio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantità)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDPrenotazioni)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDServizio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoServizio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantità)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prezzo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDPrenotazioni)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "ModificaServizi", new { id=item.IDServizio }) 
+            @Html.ActionLink("Details", "DettaglioServizi", new { id = item.IDServizio }) 
+            @Html.ActionLink("Delete", "Elimina", new { id = item.IDServizio })
+        </td>
+    </tr>
+}
+
+</table>

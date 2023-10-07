@@ -1,0 +1,24 @@
+﻿@model GestionaleAlbergo.Models.Checkout
+
+
+
+<div>
+    <h4>Checkout</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(m=>m.Caparra)</dt>
+        <dd>@Model.Caparra.ToString("C2"))</dd>
+
+        <dt>@Html.DisplayNameFor(m=>m.Prezzo)</dt>
+        <dd>@Model.Prezzo.ToString("C2"))</dd>
+        <dt>@Html.DisplayNameFor(m=>m.TotServizi)</dt>
+        <dd>@Model.TotServizi.ToString("C2"))</dd>
+
+        <dt>Totale Soggiorno</dt>
+        @{ 
+            double tot = (@Model.Prezzo- @Model.Caparra) + @Model.TotServizi;
+        }
+        <dd>@tot.ToString("C2") </dd>
+    </dl>
+
+</div>
